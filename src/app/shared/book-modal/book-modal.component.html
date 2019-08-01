@@ -1,0 +1,33 @@
+<ngx-smart-modal #myBtstrpModal identifier="cardModalIdentifier" customClass="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">{{book?.title}}</h5>
+    </div>
+    <div class="modal-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <div class="d-flex flex-column">
+                        <h6 class="title">Authors</h6>
+                        <label class="content" *ngFor="let author of book?.authors">{{author}}</label>
+                        <h6 class="title">Categories</h6>
+                        <label class="content" *ngFor="let categorie of book?.categories">{{categorie}}</label>
+                        <h6 class="title">Published Date</h6>
+                        <label class="content">{{book?.publishedDate}}</label>
+                        <h6 class="title">Page Count</h6>
+                        <label class="content">{{book?.pageCount}}</label>
+                        <h6 class="title">Language</h6>
+                        <label class="content">{{book?.language}}</label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <img *ngIf="book?.imageLinks" width="150" height="150" [src]="book.imageLinks">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button *ngIf="modalMode == BOOKLIST" type="button" class="btn btn-primary" (click)="onClickAddToWishlist()">Add To Wishlist</button>
+        <button *ngIf="modalMode == WISHLIST" type="button" class="btn btn-secondary" (click)="onClickRemoveBook()">Remove From Wishlist</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal" (click)="myBtstrpModal.close()">Close</button>
+    </div>
+</ngx-smart-modal>  

@@ -1,0 +1,13 @@
+<div class="card" style="width: 16rem; height: 32rem;" (click)="onClickCard()">
+    <img *ngIf="book?.imageLinks" class="card-img-top" width="254" height="330" [src]="book.imageLinks" alt="Card image cap">
+    <div class="card-body" style="height: 8rem;">
+        <h6 class="card-title">
+            {{ (book?.title?.length > 80) ? (book?.title | slice:0:78) + '..' : book?.title }}        
+        </h6>
+    <label>{{book?.publishedDate}}</label>
+    </div>
+    <div class="card-footer mb-1 p-2" style="height: 4rem; overflow-y: auto">
+        <label *ngFor="let author of book.authors" class="font-italic">{{author}}</label>
+    </div>
+    <button *ngIf="modalMode == WISHLIST" type="button" class="btn btn-secondary" (click)="onClickRemoveBook()">Remove From Wishlist</button>
+</div>

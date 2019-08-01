@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file,  and also import other style files */
+@import "~ngx-smart-modal/ngx-smart-modal";
+@import '~ngx-toastr/toastr';
+ 
+html,
+body {
+  background-color: #000912;
+  overflow-y: hidden;
+}
+
+$background-card: #142737;
+$text-white: white;
+
+.title {
+  font-weight: bold;
+}
+
+.content {
+  font-style: italic;
+}
+
+::-webkit-scrollbar {
+  cursor: pointer;
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #686d73;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

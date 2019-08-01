@@ -1,0 +1,15 @@
+<div class="container-fluid">
+<h4 class="text-white mt-1 text-center">Welcome {{userName}} </h4>
+    <app-search (searchEvent)="onSearch($event)" [searchText]="searchText"></app-search>
+    <div class="container">
+        <div class="d-flex flex-wrap mt-4 mb-5">
+                <app-book-card *ngFor="let book of books" 
+                    class="ml-3 mt-3"
+                    (selectBookEvent)="onSelectBook($event)"
+                    [book]="book"></app-book-card>
+            </div>
+    </div>
+</div>
+<app-book-modal [book]="selectedBook"
+        [modalMode]="modalMode"
+        (addToWishlistEvent)="onClickAddToWishlist($event)"></app-book-modal>    
